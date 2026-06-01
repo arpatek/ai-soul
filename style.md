@@ -123,7 +123,18 @@ The `[λ]` in sage green is the personal signature. Use it for the final "enteri
 - Shared utilities in `lib.sh` — source it, don't copy-paste functions
 - `declare -A` for associative arrays
 
-**Commits:** `type(scope): description` — no co-author tags.
+**Commits:** `type(scope): short summary` — no co-author tags. Body uses a `Changes:` bullet list.
+
+```
+type(scope): short summary
+
+Changes:
+- item 1
+- item 2
+```
+
+Types: `feat` `fix` `docs` `style` `refactor` `perf` `test` `build` `ci` `chore` `revert`
+Scope: the subdirectory or component (e.g. `soul`, `k3s`, `wireguard`, `ipa`).
 
 ---
 

@@ -153,7 +153,7 @@ puppet-modules, cloudflare-ddns, devkit (TUI launcher)
 
 **Python:** `#!/usr/bin/env python3` → triple-quoted module docstring (name, description, author) → `__version__` → section dividers exactly 88 chars: `# ──[ Section Name ]─────────────────────────────────────────────────────────────────` → imports grouped stdlib/third-party/internal each with a divider → type hints everywhere → one router per module (FastAPI). No comments that describe what — only why when non-obvious.
 
-**Commits:** `type(scope): description` — no co-author tags.
+**Commits:** `type(scope): short summary` — no co-author tags. Body format: `Changes:` bullet list. Types: `feat` `fix` `docs` `style` `refactor` `perf` `test` `build` `ci` `chore` `revert`. Scope: the subdirectory or component.
 
 **Docs pattern:** every component gets `docs/architecture.md`, `decisions.md`, `gotchas.md`, `upgrading.md`.
 """
