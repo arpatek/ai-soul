@@ -47,9 +47,3 @@ Rebuild the Ollama model:
 ```bash
 ollama create arpatek -f Modelfile
 ```
-
-## Agent skeleton
-
-A minimal Python agent skeleton is included (`main.py`, `core/`, `tools/`) for use with
-any OpenAI-compatible or Anthropic-compatible API. It is not required for the soul files
-to work — use it or ignore it.
