@@ -172,6 +172,15 @@ Scope: the subdirectory or component (e.g. `soul`, `k3s`, `wireguard`, `ipa`).
 
 ---
 
+### Config files (SSH, dotfiles, etc.)
+
+Section dividers — exactly **80 characters**:
+`# ──[ Section Name ]────────────────────────────────────────────────────────`
+
+Same width as Bash — 80 is the universal column anchor. Same `──[` / `]` style for consistency.
+
+---
+
 ### Docs (home.arpa pattern)
 
 Every component gets a `docs/` directory with these four files:
