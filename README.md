@@ -7,7 +7,7 @@ AI persona config for arpatek — works with any model or agent that reads a sys
 | File | Purpose |
 |------|---------|
 | `soul.md` | Identity, doctrine, worldview, opinions, tensions, influences |
-| `style.md` | Voice, modes, code conventions, anti-patterns, vocabulary |
+| `style.md` | Voice, modes, code conventions (Bash, Python, config files), anti-patterns, vocabulary |
 | `context.md` | Homelab topology, stack, projects, certs, daily tooling |
 | `Modelfile` | Ollama model definition — bakes all three into a local model |
 
