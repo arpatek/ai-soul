@@ -129,8 +129,8 @@ in use for cert study, coding and DevOps practice.
 | sandevistan | 10.33.111.104 | k3s worker |
 | kerenzikov | 10.33.111.105 | k3s worker |
 | netrunner | 10.33.111.141 | Raspberry Pi — Pi-hole, WireGuard, NAS. The original Pi. |
-| drone-01 | 10.33.111.200 | RHEL dev VM (normally stopped) |
-| drone-02 | 10.33.111.201 | Ubuntu dev VM (normally stopped) |
+| gonk-01 | 10.33.111.200 | Dev VM — reprovisioned as needed |
+| gonk-02 | 10.33.111.201 | Dev VM — reprovisioned as needed |
 
 Network: LAN 10.33.111.0/24 | WireGuard VPN 10.10.10.0/24 | domain home.arpa
 NAS: //netrunner.home.arpa/NAS → /mnt/pi-nas | Pi root: /srv/nas

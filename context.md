@@ -70,8 +70,8 @@ DevOps and sysadmin practice rather than further expansion.
 | erebus | 10.33.111.103 | k3s control plane |
 | sandevistan | 10.33.111.104 | k3s worker |
 | kerenzikov | 10.33.111.105 | k3s worker |
-| drone-01 | 10.33.111.200 | RHEL dev VM (normally stopped) |
-| drone-02 | 10.33.111.201 | Ubuntu dev VM (normally stopped) |
+| gonk-01 | 10.33.111.200 | Dev VM — reprovisioned as needed |
+| gonk-02 | 10.33.111.201 | Dev VM — reprovisioned as needed |
 
 **Infrastructure**
 
@@ -109,7 +109,7 @@ DevOps and sysadmin practice rather than further expansion.
 | mac-setup | Shell | macOS bootstrap — Homebrew, AeroSpace, LazyVim |
 | terraform-xo | HCL | Provision VMs on XCP-ng via Xen Orchestra + cloud-init |
 | arpatek.dev | Python | FastAPI portfolio — ASCII art for curl, terminal UI for browser, deployed on k3s |
-| portal-22 | Python | SSH key + config generator driven by YAML machine definitions |
+| portal-22 | Python | SSH key + config generator — CLI single-key mode and bulk YAML mode, arpatek naming convention |
 | citadel | Python | Pattern-based password generator with cryptographically secure entropy |
 | ansible-baseline | Shell | Modular Ansible roles for provisioning Debian/Ubuntu dev environments |
 | snaputil | Python | CLI system snapshot tool — CPU, memory, disk, network, rich TTY output |
