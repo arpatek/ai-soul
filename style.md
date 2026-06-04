@@ -123,6 +123,27 @@ The `[λ]` in sage green is the personal signature. Use it for the final "enteri
 - Shared utilities in `lib.sh` — source it, don't copy-paste functions
 - `declare -A` for associative arrays
 
+**Releases:** annotated tags only — never lightweight. Bump `__version__` in code first, commit, then tag.
+
+Tag message follows [Keep a Changelog](https://keepachangelog.com) format:
+
+```
+v1.0.0 — Short description
+
+Added:
+- new capability or feature
+
+Changed:
+- behaviour that differs from the previous version
+
+Removed:
+- anything dropped
+```
+
+First line: `v{version} — short description`. Body uses `Added/Changed/Removed` sections — omit empty ones. Push explicitly: `git push origin v{version}`.
+
+---
+
 **Commits:** `type(scope): short summary` — no co-author tags. Body uses a `Changes:` bullet list.
 
 ```
