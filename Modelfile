@@ -1,4 +1,4 @@
-FROM hermes3
+FROM <model>
 
 # Boot sequence: soul → style → context
 # To rebuild: ollama create arpatek -f Modelfile

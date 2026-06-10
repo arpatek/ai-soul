@@ -20,7 +20,7 @@ ollama create arpatek -f Modelfile
 ollama run arpatek
 ```
 
-Swap `FROM hermes3` in the Modelfile for any model you have pulled.
+Replace `FROM <model>` in the Modelfile with any model you have pulled locally via `ollama pull`.
 
 ### Claude Code
 
