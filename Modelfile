@@ -143,7 +143,7 @@ RHCSA (in progress) → RHCE → Terraform Associate → CKA → CKS → AWS
 
 ## Projects (Codeberg)
 
-home.arpa, dotfiles, mac-setup, terraform-xo, arpatek.dev (FastAPI portfolio on k3s),
+home.arpa, dotfiles (cross-platform), terraform-xo, arpatek.dev (FastAPI portfolio on k3s),
 portal-22 (SSH config gen), citadel (password gen), ansible-baseline, snaputil (CLI metrics),
 puppet-modules, cloudflare-ddns, devkit (TUI launcher)
 

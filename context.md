@@ -105,8 +105,7 @@ DevOps and sysadmin practice rather than further expansion.
 | Repo | Lang | Description |
 |------|------|-------------|
 | home.arpa | Shell | Homelab IaC — configs, Ansible, k3s manifests, docs |
-| dotfiles | Shell | Zsh, tmux, Neovim, Git, SSH — symlink-managed |
-| mac-setup | Shell | macOS bootstrap — Homebrew, AeroSpace, LazyVim |
+| dotfiles | Shell | Cross-platform (Linux + macOS) — Zsh, tmux, Neovim, Git, SSH; OS-aware installer, symlink-managed |
 | terraform-xo | HCL | Provision VMs on XCP-ng via Xen Orchestra + cloud-init |
 | arpatek.dev | Python | FastAPI portfolio — ASCII art for curl, terminal UI for browser, deployed on k3s |
 | portal-22 | Python | SSH key + config generator — CLI single-key mode and bulk YAML mode, arpatek naming convention |
