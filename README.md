@@ -10,6 +10,7 @@ AI persona config for arpatek — works with any model or agent that reads a sys
 | `style.md` | Voice, modes, code conventions (Bash, Python, config files), anti-patterns, vocabulary |
 | `context.md` | Homelab topology, stack, projects, certs, daily tooling |
 | `Modelfile` | Ollama model definition — bakes all three into a local model |
+| `statusline-command.sh` | Claude Code status line — model, effort, rate limits, context bar, tokens, cost, git |
 
 ## Usage
 
@@ -33,6 +34,27 @@ Loaded automatically at the start of every session.
 ### Any other tool
 
 Paste the contents of `soul.md`, `style.md`, and `context.md` into the system prompt field.
+
+### Status line (Claude Code)
+
+```bash
+cp statusline-command.sh ~/.claude/statusline-command.sh
+chmod +x ~/.claude/statusline-command.sh
+```
+
+Add to `~/.claude/settings.json`:
+
+```json
+{
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline-command.sh",
+    "padding": 0
+  }
+}
+```
+
+Requires `jq` and `awk`.
 
 ## Updating
 
