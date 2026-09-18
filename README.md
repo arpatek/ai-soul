@@ -1,5 +1,7 @@
 # ai-soul
 
+[![built by arpatek](.assets/badge.svg)](https://arpatek.dev)
+
 AI persona config for arpatek — works with any model or agent that reads a system prompt.
 
 An AI is an accelerator and a multiplier of what you already are. If you build bad code, it
