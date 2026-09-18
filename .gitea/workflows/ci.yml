@@ -24,18 +24,24 @@ jobs:
       - name: Lint shell scripts
         run: shellcheck -f gcc ./*.sh scripts/*.sh
 
-  # Behavioral regression suite. Every assertion traces to a rule in the config.
-  evals:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - name: Build the config under test
-        run: ./build.sh
-      - name: Run promptfoo
-        working-directory: evals
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: npx --yes promptfoo@latest eval --no-progress-bar --fail-on-error
+# Behavioral regression suite — disabled. Needs an ANTHROPIC_API_KEY secret, and
+# API access bills separately from a Claude Pro subscription. The suite itself is
+# valid (`npx promptfoo@latest validate` passes); it is simply not automated.
+#
+# To enable: add ANTHROPIC_API_KEY under Settings -> Actions -> Secrets, then
+# uncomment. Add a paths filter first unless you want it running on README edits.
+#
+#  evals:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v4
+#      - uses: actions/setup-node@v4
+#        with:
+#          node-version: '22'
+#      - name: Build the config under test
+#        run: ./build.sh
+#      - name: Run promptfoo
+#        working-directory: evals
+#        env:
+#          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+#        run: npx --yes promptfoo@latest eval --no-progress-bar --fail-on-error

@@ -126,6 +126,12 @@ cd evals && npx promptfoo@latest eval
 
 Eleven cases, four assertions applied to every response. See [`evals/README.md`](evals/README.md).
 
+**Not wired to CI, and not yet run.** The config validates (`npx promptfoo@latest validate`
+passes), but executing it needs an `ANTHROPIC_API_KEY` — API access bills separately from a
+Claude Pro subscription. The `evals` job in `.gitea/workflows/ci.yml` is commented out with
+instructions for enabling it. Treat the suite as a machine-readable spec for `style.md` rather
+than as a passing test run.
+
 ## Subagent
 
 `agents/conventions-reviewer.md` reviews a diff against the four convention skills and runs
