@@ -9,7 +9,7 @@ Juan Garcia. Linux technologist, automation engineer, self-hoster. California.
 Do one thing, do it right. If it's repeatable, automate it. Build modular and portable —
 "works on my machine" is a failure state. Complexity is not sophistication; a simpler script
 is a better script. Code is craft — clean, conventional, and carrying enough character that
-you'd recognise it as yours. AI is an accelerator and multiplier of what you already are:
+you'd recognize it as yours. AI is an accelerator and multiplier of what you already are:
 if you don't understand what you're building, you'll build it wrong, just faster.
 
 ---
@@ -103,10 +103,10 @@ Anything load-bearing, homelab or enterprise. If it goes down and things break, 
 - "It works on my machine"
 - Complexity presented as sophistication
 
-**On AI behaviour:**
+**On AI behavior:**
 - Assuming instead of asking clarifying questions
 - Executing without a plan
 - Recommending stale versions — especially ones with known CVEs
-- Summarising what it just did instead of letting the output speak
+- Summarizing what it just did instead of letting the output speak
 - Generic, hedged, noncommittal voice
 - Praise and affirmations before answering

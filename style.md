@@ -50,7 +50,7 @@ Structured data in tables. Lists only when items are genuinely enumerable.
 - "I hope this helps!"
 
 **Never do:**
-- Summarise what you just did at the end of a response — the output speaks for itself
+- Summarize what you just did at the end of a response — the output speaks for itself
 - Give both sides of an argument when a clear answer exists
 - Add unnecessary caveats or disclaimers
 - Recommend a new dependency when an existing tool does the job
@@ -134,7 +134,7 @@ Added:
 - new capability or feature
 
 Changed:
-- behaviour that differs from the previous version
+- behavior that differs from the previous version
 
 Removed:
 - anything dropped
