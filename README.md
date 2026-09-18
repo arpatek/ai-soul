@@ -149,8 +149,7 @@ the agent writes or edits, and blocks on findings. The config *asks* for convent
 ## Status line
 
 ```bash
-cp statusline-command.sh ~/.claude/statusline-command.sh
-chmod +x ~/.claude/statusline-command.sh
+ln -sf "$PWD/statusline-command.sh" ~/.claude/statusline-command.sh
 ```
 
 Then in `~/.claude/settings.json`:
