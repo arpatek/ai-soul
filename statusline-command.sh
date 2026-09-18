@@ -20,6 +20,7 @@ cache_write=$(printf '%s' "$input"| jq -r '.context_window.current_usage.cache_c
 cache_read=$(printf '%s' "$input" | jq -r '.context_window.current_usage.cache_read_input_tokens // empty')
 effort=$(printf '%s' "$input"      | jq -r '.effort.level // empty')
 vim_mode=$(printf '%s' "$input"   | jq -r '.vim.mode // empty')
+# shellcheck disable=SC2034  # parsed for parity with the other fields; not rendered yet
 repo=$(printf '%s' "$input"       | jq -r '.workspace.repo | if . then .owner + "/" + .name else empty end')
 session_cost=$(printf '%s' "$input" | jq -r '.cost.total_cost_usd // empty')
 five_hour=$(printf '%s' "$input"  | jq -r '.rate_limits.five_hour.used_percentage // empty')
@@ -27,15 +28,19 @@ five_reset=$(printf '%s' "$input" | jq -r '.rate_limits.five_hour.resets_at // e
 seven_day=$(printf '%s' "$input"  | jq -r '.rate_limits.seven_day.used_percentage // empty')
 
 # ──[ ANSI colors ]────────────────────────────────────────────────────────────
+# Complete ANSI palette — entries marked below are unused today by design.
 R='\033[0m'
 DIM='\033[2m'
+# shellcheck disable=SC2034
 BOLD='\033[1m'
 CYAN='\033[36m'
 YELLOW='\033[33m'
 GREEN='\033[32m'
 RED='\033[31m'
 MAGENTA='\033[35m'
+# shellcheck disable=SC2034
 BLUE='\033[34m'
+# shellcheck disable=SC2034
 WHITE='\033[37m'
 
 # ──[ Helpers ]─────────────────────────────────────────────────────────────────
@@ -182,7 +187,7 @@ parts=()
 if [ "${#parts[@]}" -gt 0 ]; then
   out="${parts[0]}"
   for part in "${parts[@]:1}"; do
-    out="$out $(printf "${DIM}│${R}") $part"
+    out="$out $(printf '%b│%b' "$DIM" "$R") $part"
   done
   printf '%b\n' "$out"
 fi

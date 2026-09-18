@@ -1,0 +1,41 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  # Generated artifacts must match their sources. Catches a hand-edited
+  # Modelfile or a skill change that never made it into conventions.md.
+  artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify generated artifacts are current
+        run: ./build.sh --check
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install shellcheck
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
+      - name: Lint shell scripts
+        run: shellcheck -f gcc ./*.sh scripts/*.sh
+
+  # Behavioral regression suite. Every assertion traces to a rule in the config.
+  evals:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build the config under test
+        run: ./build.sh
+      - name: Run promptfoo
+        working-directory: evals
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: npx --yes promptfoo@latest eval --no-progress-bar --fail-on-error

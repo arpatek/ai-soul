@@ -8,8 +8,8 @@
 - **Location:** California, USA
 - **Languages:** English (fluent), Spanish (fluent)
 - **Email:** juang.dev@proton.me
-- **Public repos:** Codeberg (codeberg.org/arpatek)
-- **Internal CI/CD:** Gitea self-hosted at soulkiller.home.arpa — not for public repos, pipelines only
+- **Public repos:** Codeberg (codeberg.org/arpatek), mirrored to GitHub (github.com/arpatek)
+- **Internal CI/CD:** Gitea self-hosted at `soulkiller` — pipelines only, not for public repos
 
 ## Certifications
 
@@ -23,6 +23,13 @@
 | AWS | Roadmap |
 | Google IT Automation with Python | Completed |
 | Google IT Support | Completed |
+
+## Current focus
+
+- RHCSA in progress → RHCE → Terraform Associate → CKA → CKS → AWS
+- Homelab: buildout complete, now the practice ground for cert study and DevOps work
+- Deepening DevOps breadth across the full stack
+- Long horizon: security — "hacker" in the original curious sense, not the job title
 
 ## Stack
 
@@ -44,59 +51,37 @@
 
 | Tool | Where |
 |------|-------|
-| Shell | Zsh (Mac, Asahi) · Bash (servers) |
-| Editor | Neovim + LazyVim (Mac, Asahi) · Vim (RHEL/servers) |
-| Terminal | Ghostty (Asahi MacBook) · iTerm2 (Mac Mini) |
+| Shell | Zsh (macOS) · Bash (servers) |
+| Editor | Neovim + LazyVim (macOS) · Vim (RHEL/servers) |
+| Terminal | Ghostty |
 
 ## Homelab
 
-All VMs on Proxmox host blackwall. Cyberpunk 2077 naming theme throughout.
-Buildout is complete for now — current focus is using it for cert study, coding practice,
-DevOps and sysadmin practice rather than further expansion.
+All VMs on Proxmox host `blackwall`. Cyberpunk 2077 naming theme throughout.
+Buildout is complete — current focus is using it for cert study, coding practice, and
+DevOps/sysadmin practice rather than further expansion.
 
-**Hypervisor**
+**Topology is not duplicated here.** Hosts, addressing, network layout, and the service map
+live in [`home.arpa/docs/`](https://codeberg.org/arpatek/home.arpa/src/branch/main/docs)
+(`hostnames.md`, `network.md`, `architecture.md`). That repo is the source of truth.
 
-| Host | IP | Role |
-|------|----|------|
-| blackwall | 10.33.111.44 | Proxmox VE |
+Services in the lab: FreeIPA (identity, Kerberos, DNS authority for `home.arpa`), Gitea +
+act_runner (CI and container registry), Prometheus/Loki/Grafana, k3s (one control plane, two
+workers), Pi-hole (DNS/DHCP), WireGuard, and CIFS NAS shares on two Raspberry Pis.
 
-**VMs**
+**Practice VMs**
 
-| Host | IP | Role |
-|------|----|------|
-| mikoshi | 10.33.111.100 | FreeIPA — identity, Kerberos, DNS authority (home.arpa) |
-| soulkiller | 10.33.111.101 | Gitea + act_runner CI + container registry |
-| netwatch | 10.33.111.102 | PLG stack — Prometheus, Loki, Grafana |
-| erebus | 10.33.111.103 | k3s control plane |
-| sandevistan | 10.33.111.104 | k3s worker |
-| kerenzikov | 10.33.111.105 | k3s worker |
-| gonk-01 | 10.33.111.200 | Dev VM — reprovisioned as needed |
-| gonk-02 | 10.33.111.201 | Dev VM — reprovisioned as needed |
+RHCSA and lab practice VMs run in UTM on Apple Silicon rather than on Proxmox — `blackwall`
+has only one spare slot. Virtualize (not Emulate), aarch64 images, RHEL 10 via the free Red
+Hat Developer Subscription. Bridged on `mizutani` so they are reachable over LAN and
+WireGuard; shared networking on `darwin`, since bridged over Wi-Fi is unreliable.
 
-**Infrastructure**
-
-| Host | IP | Role |
-|------|----|------|
-| netrunner | 10.33.111.141 | Raspberry Pi — Pi-hole DNS/DHCP, WireGuard VPN server, NAS. The original Pi that started the homelab. |
-
-**Network**
-- LAN: 10.33.111.0/24, gateway 10.33.111.1
-- WireGuard VPN: 10.10.10.0/24
-- DNS domain: home.arpa
-- DNS: FreeIPA (mikoshi) authoritative for home.arpa, Pi-hole (netrunner) for everything else
-- Inbound firewall: only UDP 55055 (WireGuard)
-
-**NAS**
-- CIFS mount: //netrunner.home.arpa/NAS → /mnt/pi-nas
-- Pi filesystem root: /srv/nas
-
-**Personal devices**
+## Personal devices
 
 | Device | Name | Notes |
 |--------|------|-------|
-| MacBook Air (Asahi Linux) | silverhand | CLI work, Claude Code, current daily driver |
-| Mac Mini (macOS) | mizutani | Main stable workstation — GUI, macOS tooling |
-| MacBook Air (macOS) | malorian | WireGuard peer |
+| MacBook Air (macOS) | darwin | Main workstation — CLI work, Claude Code, 2 aarch64 RHEL VMs on UTM |
+| Mac Mini (macOS) | mizutani | Dedicated UTM hypervisor — 4 bridged lab VMs |
 | iPhone | uplink | WireGuard peer |
 | iPad Mini | dataslab | WireGuard peer |
 
@@ -105,6 +90,7 @@ DevOps and sysadmin practice rather than further expansion.
 | Repo | Lang | Description |
 |------|------|-------------|
 | home.arpa | Shell | Homelab IaC — configs, Ansible, k3s manifests, docs |
+| arpa-iac | Shell | Ansible inventory and vault-backed credentials for home.arpa |
 | dotfiles | Shell | Cross-platform (Linux + macOS) — Zsh, tmux, Neovim, Git, SSH; OS-aware installer, symlink-managed |
 | terraform-xo | HCL | Provision VMs on XCP-ng via Xen Orchestra + cloud-init |
 | arpatek.dev | Python | FastAPI portfolio — ASCII art for curl, terminal UI for browser, deployed on k3s |
@@ -114,7 +100,8 @@ DevOps and sysadmin practice rather than further expansion.
 | snaputil | Python | CLI system snapshot tool — CPU, memory, disk, network, rich TTY output |
 | puppet-modules | Puppet | Modules for provisioning and hardening Debian VMs |
 | cloudflare-ddns | Shell | Bash + systemd dynamic DNS updater for Cloudflare |
-| devkit | Shell | Data-driven TUI launcher for homelab ops |
+| devkit | Python | Data-driven TUI launcher for homelab ops |
+| ai-soul | Shell | This repo — persona config, style guide, and Ollama Modelfile |
 
 ## Work history (abbreviated)
 

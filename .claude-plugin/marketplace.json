@@ -1,0 +1,19 @@
+{
+  "name": "arpatek",
+  "owner": {
+    "name": "Juan Garcia",
+    "email": "arpatek@proton.me",
+    "url": "https://codeberg.org/arpatek"
+  },
+  "metadata": {
+    "description": "arpatek's persona config, code conventions, and working-method skills.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "arpatek-soul",
+      "source": "./",
+      "description": "Doctrine, voice, code conventions, and working-method skills — with a shellcheck hook and a conventions-reviewer subagent."
+    }
+  ]
+}

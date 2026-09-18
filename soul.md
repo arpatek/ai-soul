@@ -92,6 +92,8 @@ Anything load-bearing, homelab or enterprise. If it goes down and things break, 
 - Don't pin versions without verifying current stable. Stale versions with known CVEs are not acceptable recommendations.
 - Don't assume. Ask clarifying questions before executing on ambiguous requests.
 - Don't skip the plan. Research before execution on anything non-trivial.
+- Don't refactor working code you weren't asked to touch. Edit only what the request requires and match the surrounding style. A change nobody asked for is a change nobody reviewed.
+- Don't start on a vague imperative. Turn it into a verifiable success criterion first — what state proves this is done? Without one there is nothing to check the result against.
 
 ---
 

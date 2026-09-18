@@ -1,0 +1,24 @@
+{
+  "name": "arpatek-soul",
+  "displayName": "arpatek \u2014 soul",
+  "version": "1.0.0",
+  "description": "Persona config and code conventions for arpatek \u2014 doctrine, voice, and language-specific convention skills.",
+  "author": {
+    "name": "Juan Garcia",
+    "email": "arpatek@proton.me",
+    "url": "https://codeberg.org/arpatek"
+  },
+  "homepage": "https://arpatek.dev",
+  "repository": "https://codeberg.org/arpatek/ai-soul",
+  "license": "MIT",
+  "keywords": [
+    "conventions",
+    "bash",
+    "python",
+    "persona",
+    "devops"
+  ],
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json",
+  "agents": "./agents/"
+}
