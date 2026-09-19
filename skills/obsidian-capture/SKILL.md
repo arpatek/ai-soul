@@ -12,7 +12,7 @@ the answer.
 
 ## Vault location
 
-Read `$OBSIDIAN_VAULT`, falling back to `~/Documents/vault`. If neither exists, say so and
+Read `$OBSIDIAN_VAULT`, falling back to `~/Documents/Vault`. If neither exists, say so and
 stop — do not create a vault silently.
 
 Never write to a vault on `/Volumes/` (an SMB mount). Obsidian on a network share risks
@@ -67,18 +67,26 @@ that only exists behind a URL — quote the substance, cite the source below it.
 
 ## Filing
 
-Flat-ish, tag-driven. Avoid deep folder trees — they force a single category onto notes that
-have several, which is what links are for.
+Shallow topic folders, one level deep — never a nested tree. A note is usually about several
+things at once, and a tree forces one category; tags and links carry the cross-cutting
+structure instead. A new subject gets a new top-level folder.
 
 ```
-vault/
-├── notes/          # the pages
-├── daily/          # optional, date-stamped
-└── attachments/    # images and files
+Vault/
+├── Homelab/        # infrastructure, services, audits
+├── Linux/          # Linux and RHCSA reference
+├── Meta/           # vault and tooling notes
+├── Todo/           # action lists and backlogs, one per subject
+├── Daily/          # optional, date-stamped
+└── Attachments/    # images and files
 ```
 
-If the vault already has a structure (PARA, Zettelkasten, LYT), follow that instead. Read the
-existing folder layout before filing the first note.
+Folders and files are both Title Case with spaces (minor words lowercase unless leading;
+preserve literals like `home.arpa`, `systemd`, `SELinux`, `iMessage`). An action list or
+backlog split from a note goes in `Todo/`, not beside the reference note.
+
+Read the existing folder layout before filing — match a folder that fits, add a new top-level
+one only when the subject is genuinely new.
 
 ## After writing
 
